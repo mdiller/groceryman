@@ -1,0 +1,22 @@
+networks:
+  default:
+    external:
+      name: traefik
+
+services:
+  groceryman:
+    restart: unless-stopped
+    container_name: groceryman
+    build: .
+    ports:
+      - 80:3000
+    volumes:
+      - ./data:/app/data
+    expose:
+      - 80
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.groceryman.rule=Host(`groceryman.skrattpotatis.dillerm.io`)
+      - traefik.http.routers.groceryman.tls.certresolver=le
+      - traefik.http.routers.groceryman.entrypoints=websecure
+      - traefik.http.routers.groceryman.middlewares=mapauth

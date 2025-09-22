@@ -1,0 +1,22 @@
+{
+  "name": "groceryman",
+  "version": "1.0.0",
+  "main": "walmart_fetch.js",
+  "scripts": {
+    "serve": "node server.js",
+    "build": "npm run build --prefix client",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@zxing/browser": "^0.1.5",
+    "cheerio": "^1.1.2",
+    "express": "^5.1.0",
+    "playwright": "^1.55.0",
+    "playwright-extra": "^4.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}
